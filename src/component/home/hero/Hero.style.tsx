@@ -18,7 +18,8 @@ export const HeroHeading = styled("h1")(({ theme }) => ({
   fontSize: "68px",
   fontWeight: 800,
   textTransform: "uppercase",
-  margin:'0px'
+  margin:'0px',
+  lineHeight:'77px'
 }));
 export const ExploreSpan = styled("span")(({ theme }) => ({
   background: "linear-gradient(135deg, #6a11cb 0%, #ff00ff 100%)",

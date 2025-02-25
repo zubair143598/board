@@ -1,3 +1,4 @@
+import Favorite from "@/component/home/favorite/Favorite";
 import Hero from "@/component/home/hero/Hero";
 import Navbar from "@/component/ui/Navbar";
 import { Box } from "@mui/material";
@@ -19,6 +20,7 @@ export default function Home() {
         <Navbar />
         <Hero />
       </Box>
+      <Favorite/>
     </Box>
   );
 }

@@ -14,7 +14,6 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
     <div
       style={{
         maxWidth: "1440px",
-
         position: "absolute",
         backgroundColor: "rgba(61, 45, 116, 0.4)",
         backdropFilter: "blur(12px)",
@@ -24,9 +23,10 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
         whiteSpace: "nowrap",
         textAlign: "center",
         zIndex: 10,
-        bottom: "16px",
+        bottom: "0px",
         display: "flex",
         justifyContent: "center",
+        padding:'20px 0'
       }}
     >
       <Swiper
