@@ -40,16 +40,16 @@ const Favorite = () => {
           screenshots, and information about release.
         </FavParagraph>
       </ParagraphContainer>
-      <Box sx={{ width: "100%",height:'430px', maxWidth: 1400, mx: "auto", my: 4 }}>
+      <Box sx={{ width: "100%", height:'450px', maxWidth: 1400, mx: "auto", }}>
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={50} // Keeps proper gap
+          spaceBetween={50} 
           centeredSlides={true}
           slidesPerView={"auto"}
           loop={true}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          speed={1000} // Smooth transition speed
-          grabCursor={true} // Makes the cursor feel more interactive
+          speed={3000} 
+          grabCursor={true}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           style={{ paddingLeft: "50px", paddingRight: "50px" }}
         >

@@ -7,20 +7,21 @@ import {
   HeroContainer,
   HeroHeading,
   HeroParagraph,
+  MarqueeContainer,
   ParagraphContainer,
   PlayButton,
-  ProjectDetail,
   ProjectsDetailContainer,
+  RightContainer,
 } from "./Hero.style";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import MarqueeSwiper from "@/component/common/MarqueeSwiper";
+import Image from "next/image";
 
 const Hero = () => {
   return (
     <HeroContainer>
-        <div className="absolute inset-0 bg-blue-500 opacity-50"></div>
+      <div className=" "></div>
       <HeadingContainer>
-
         <HeroHeading>
           Let your mind <ExploreSpan> explore </ExploreSpan> new world
         </HeroHeading>
@@ -37,28 +38,34 @@ const Hero = () => {
         <PlayButton>Play Now</PlayButton>
       </ButtonContainer>
       <ProjectsDetailContainer>
-        <ProjectDetail>
+        <Box>
           <Typography sx={{ fontWeight: 800, fontSize: "30px" }}>
             300+
           </Typography>
           <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
             Unique style
           </Typography>
-        </ProjectDetail>
-        <ProjectDetail>
-          <Typography sx={{ fontWeight: 800, fontSize: "30px" , background:
+        </Box>
+        <Box>
+          <Typography
+            sx={{
+              fontWeight: 800,
+              fontSize: "30px",
+              background:
                 "linear-gradient(135deg, #5d31d4 0%, #ff00ff 50%, #ff0080 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              color: "transparent",}}>
+              color: "transparent",
+            }}
+          >
             200+
           </Typography>
           <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
             Project finished
           </Typography>
-        </ProjectDetail>
-        <ProjectDetail>
+        </Box>
+        <Box>
           <Typography
             sx={{
               fontWeight: 800,
@@ -70,9 +77,20 @@ const Hero = () => {
           <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
             Happy customer
           </Typography>
-        </ProjectDetail>
+        </Box>
       </ProjectsDetailContainer>
-      <MarqueeSwiper  speed={20_000} />
+      <RightContainer>
+        <Image
+          src="/herobg.png"
+          alt=""
+          layout="responsive"
+          width={100}
+          height={960}
+        />
+      </RightContainer>
+      <MarqueeContainer>
+        <MarqueeSwiper speed={20_000} />
+      </MarqueeContainer>
     </HeroContainer>
   );
 };

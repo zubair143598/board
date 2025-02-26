@@ -19,7 +19,10 @@ export const HeroHeading = styled("h1")(({ theme }) => ({
   fontWeight: 800,
   textTransform: "uppercase",
   margin:'0px',
-  lineHeight:'77px'
+  // lineHeight:'77px',
+  [theme.breakpoints.down('md')]:{
+    fontSize: "26px",
+  }
 }));
 export const ExploreSpan = styled("span")(({ theme }) => ({
   background: "linear-gradient(135deg, #6a11cb 0%, #ff00ff 100%)",
@@ -105,6 +108,28 @@ export const PlayButton = styled(Button)(({ theme }) => ({
 
   export const ProjectDetail = styled(Box)(({ theme }) => ({}));
 
-  export const ProjectsContainer = styled(Box)(({ theme }) => ({}));
+  export const MarqueeContainer = styled(Box)(()=>({
+    maxWidth: "1440px",
+    position: "absolute",
+    backgroundColor: "rgba(61, 45, 116, 0.4)",
+    backdropFilter: "blur(12px)",
+    WebkitBackdropFilter: "blur(10px)",
+    color: "white",
+    width: "100%",
+    whiteSpace: "nowrap",
+    textAlign: "center",
+    zIndex: 10,
+    bottom: "0px",
+    display: "flex",
+    justifyContent: "center",
+    padding:'20px 0'
+  }))
 
-  export const HappyCustomerContainer = styled(Box)(({ theme }) => ({}));
+  export const RightContainer = styled(Box)(()=>({
+    position:'absolute',
+    left:'0',
+    width:'100%',
+    bottom:'0px',
+    zIndex:'-1'
+  }))
+  

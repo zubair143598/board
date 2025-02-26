@@ -22,7 +22,9 @@ export const ActiveButton = styled(Button)(({ theme }) => ({
   
   export const NonActiveButton = styled(Button)(({ theme }) => ({
       position: "relative",
-      padding: "20px 50px",
+      // padding: "20px 50px",
+      height:'75px',
+      width:'180px',
       fontSize: "20px",
       fontWeight: 800,
       textTransform: "uppercase",

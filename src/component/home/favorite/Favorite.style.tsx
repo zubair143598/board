@@ -30,8 +30,7 @@ export const FavContainer = styled(Box)(({ theme }) => ({
 
   export const ParagraphContainer = styled(Box)(({ theme }) => ({
     maxWidth: "518px",
-    margin:'0 auto',
-    marginTop: "12px",
+    margin:'12px auto 70px',
   }));
   
   export const FavParagraph = styled(Typography)(({ theme }) => ({
@@ -39,7 +38,7 @@ export const FavContainer = styled(Box)(({ theme }) => ({
   }));
 
   export const ButtonsContainer = styled(Box)(()=>({
-    margin:'70px auto',
+    margin:'70px auto 110px',
     maxWidth:'470px',
     display:'flex',
     gap:'20px'

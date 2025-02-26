@@ -11,24 +11,7 @@ import Image from "next/image";
 const MarqueeSwiper = ({ speed = 30000 }) => {
 
   return (
-    <div
-      style={{
-        maxWidth: "1440px",
-        position: "absolute",
-        backgroundColor: "rgba(61, 45, 116, 0.4)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(10px)",
-        color: "white",
-        width: "100%",
-        whiteSpace: "nowrap",
-        textAlign: "center",
-        zIndex: 10,
-        bottom: "0px",
-        display: "flex",
-        justifyContent: "center",
-        padding:'20px 0'
-      }}
-    >
+   
       <Swiper
         modules={[Autoplay]}
         slidesPerView="auto"
@@ -212,7 +195,6 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
           ></Box>
         </SwiperSlide>
       </Swiper>
-    </div>
   );
 };
 
