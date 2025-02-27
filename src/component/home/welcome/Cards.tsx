@@ -104,7 +104,7 @@ const Cards = () => {
                 </Box>
               </CardContent>
               <CardActions sx={{ margin: "0 18px 56px" }}>
-                <ActiveButton sx={{ color: "white", width: "100%", height: "52px" }}>Live Demo</ActiveButton>
+                <ActiveButton sx={{ color: "white", width: {xs:"100%"}, height: "52px" }}>Live Demo</ActiveButton>
               </CardActions>
             </Card>
           </Grid>
