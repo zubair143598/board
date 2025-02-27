@@ -1,29 +1,47 @@
 "use client";
+import { Height } from "@mui/icons-material";
 import { Box, styled, Typography, Button } from "@mui/material";
 
 export const HeroContainer = styled(Box)(({ theme }) => ({
   maxWidth: "1440px",
   margin: "100px auto",
-  color:'white',
-  position:'relative',
-  paddingBottom:'100px'
+  color: "white",
+  position: "relative",
+  paddingBottom: "100px",
+  [theme.breakpoints.down("sm")]: {
+    margin: "50px auto",
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+  paddingBottom: "20px",
+
+  },
 }));
 
 export const HeadingContainer = styled(Box)(({ theme }) => ({
   maxWidth: "578px",
   marginLeft: "103px",
+  [theme.breakpoints.down("md")]: {
+    marginLeft: "26px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    maxWidth: "334px",
+    marginLeft: "0px",
+    display: "flex",
+    justifyContent: "center",
+  },
 }));
 
-export const HeroHeading = styled("h1")(({ theme }) => ({
+export const HeroHeading = styled(Typography)(({ theme }) => ({
   fontSize: "68px",
   fontWeight: 800,
   textTransform: "uppercase",
-  margin:'0px',
-  // lineHeight:'77px',
-  [theme.breakpoints.down('md')]:{
-    fontSize: "26px",
-  }
+  margin: "0px",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "40px",
+  },
 }));
+
 export const ExploreSpan = styled("span")(({ theme }) => ({
   background: "linear-gradient(135deg, #6a11cb 0%, #ff00ff 100%)",
   WebkitBackgroundClip: "text",
@@ -34,10 +52,22 @@ export const ParagraphContainer = styled(Box)(({ theme }) => ({
   maxWidth: "602px",
   marginLeft: "103px",
   marginTop: "14px",
+  
+  [theme.breakpoints.down("sm")]: {
+    marginLeft: "0px",
+    maxWidth: "329px",
+    height:'550px'
+  },
 }));
 
 export const HeroParagraph = styled(Typography)(({ theme }) => ({
   fontSize: "19px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "16px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+  },
 }));
 
 export const ButtonContainer = styled(Box)(({ theme }) => ({
@@ -45,91 +75,63 @@ export const ButtonContainer = styled(Box)(({ theme }) => ({
   marginLeft: "103px",
   marginTop: "30px",
   gap: "20px",
-}));
-
-export const BuyButton = styled(Button)(({ theme }) => ({
-  background: "linear-gradient(135deg, #5d31d4 0%, #ff00ff 50%, #ff0080 100%)",
-  color: "white",
-  height:'75px',
-  width:'180px',
-  fontSize: "20px",
-  fontWeight: 800,
-  textTransform: "uppercase",
-  borderRadius: "0px",
-  transform: "skewX(-15deg)", // Skew effect to match the image
-  transition: "all 0.3s ease-in-out",
-  border: "none",
-  "&:hover": {
-    background:
-      "linear-gradient(135deg,rgb(97, 77, 144) 0%,rgb(93, 40, 93) 50%,rgb(179, 46, 110) 100%)",
-    transform: "skewX(-15deg)", 
+  flexDirection: "row",
+  [theme.breakpoints.down("md")]: {
+    marginLeft: "26px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    marginLeft: "10px",
   },
 }));
 
-export const PlayButton = styled(Button)(({ theme }) => ({
-    position: "relative",
-    padding: "20px 50px",
-    fontSize: "20px",
-    fontWeight: 800,
-    textTransform: "uppercase",
-    background: "transparent",
-    transform: "skewX(-15deg)",
-    transition: "all 0.3s ease-in-out",
-    border: "2px solid transparent",
-    "&::before": {
-      content: '""',
-      position: "absolute",
-      inset: 0,
-      padding: "2px",
-      borderRadius: "5px",
-      background: "linear-gradient(135deg, #5d31d4, #ff00ff, #ff0080)",
-      "-webkit-mask": "linear-gradient(white, white) content-box, linear-gradient(white, white)",
-      mask: "linear-gradient(white, white) content-box, linear-gradient(white, white)",
-      "-webkit-mask-composite": "destination-out",
-      maskComposite: "exclude",
-    },
-    "& span": {
-      background: "linear-gradient(135deg, #5d31d4, #ff00ff, #ff0080)",
-      "-webkit-background-clip": "text",
-      "-webkit-text-fill-color": "transparent",
-    },
-    "&:hover": {
-      transform: "skewX(-15deg)",
-    },
-  }));
+export const ProjectsDetailContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  marginTop: "65px",
+  marginLeft: "103px",
+  gap: "30px",
+  textAlign: "center",
+  [theme.breakpoints.down("md")]: {
+    marginLeft: "26px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    marginLeft: "10px",
+  },
+}));
 
-  export const ProjectsDetailContainer = styled(Box)(({ theme }) => ({
-    display: "flex",
-    marginTop: "65px",
-    marginLeft: "103px",
-    gap: "30px",
-    textAlign: "center",
-  }));
+export const MarqueeContainer = styled(Box)(({theme}) => ({
+  maxWidth: "1440px",
+  position: "absolute",
+  backgroundColor: "rgba(61, 45, 116, 0.4)",
+  backdropFilter: "blur(12px)",
+  WebkitBackdropFilter: "blur(10px)",
+  color: "white",
+  width: "100%",
+  whiteSpace: "nowrap",
+  textAlign: "center",
+  zIndex: 10,
+  bottom: "-12px",
+  display: "flex",
+  justifyContent: "center",
+  padding: "20px 0",
+  transform: "rotate(-1deg)",
+  transformOrigin: "center",
+  [theme.breakpoints.down("sm")]: {
+    bottom: "16rem",
+    padding: "13px 0",
+  }
+}));
 
-  export const ProjectDetail = styled(Box)(({ theme }) => ({}));
-
-  export const MarqueeContainer = styled(Box)(()=>({
-    maxWidth: "1440px",
-    position: "absolute",
-    backgroundColor: "rgba(61, 45, 116, 0.4)",
-    backdropFilter: "blur(12px)",
-    WebkitBackdropFilter: "blur(10px)",
-    color: "white",
-    width: "100%",
-    whiteSpace: "nowrap",
-    textAlign: "center",
-    zIndex: 10,
-    bottom: "0px",
-    display: "flex",
-    justifyContent: "center",
-    padding:'20px 0'
-  }))
-
-  export const RightContainer = styled(Box)(()=>({
-    position:'absolute',
-    left:'0',
-    width:'100%',
-    bottom:'0px',
-    zIndex:'-1'
-  }))
-  
+export const RightContainer = styled(Box)(({theme}) => ({
+  position: "absolute",
+  left: "0",
+  width: "100%",
+  bottom: "0px",
+  zIndex: "-1",
+  top: "-11rem",
+  height: "130%",
+  [theme.breakpoints.down("sm")]: {
+    zIndex: "-1",
+    height:'46%',
+    top: "15rem",
+  },
+}));

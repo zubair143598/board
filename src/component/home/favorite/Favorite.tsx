@@ -13,11 +13,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Box, Card, CardMedia } from "@mui/material";
+import { Box, Card, CardMedia, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import { ActiveButton, NonActiveButton } from "@/component/mui/Buttons";
 
 const Favorite = () => {
+  const [activeIndex, setActiveIndex] = useState(2);
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const images = [
     "/swiperimg1.png",
     "/swiperimg2.jfif",
@@ -26,7 +28,6 @@ const Favorite = () => {
     "/swiperimg2.jfif",
     "/swiperimg3.jfif",
   ];
-  const [activeIndex, setActiveIndex] = useState(2);
   return (
     <FavContainer>
       <HeadingContainer>
@@ -40,7 +41,7 @@ const Favorite = () => {
           screenshots, and information about release.
         </FavParagraph>
       </ParagraphContainer>
-      <Box sx={{ width: "100%", height:'450px', maxWidth: 1400, mx: "auto", }}>
+      <Box sx={{ width: "100%", height:{xs:'260px',sm:'450px'}, maxWidth: 1400, mx: "auto", }}>
         <Swiper
           modules={[Autoplay]}
           spaceBetween={50} 
@@ -57,14 +58,14 @@ const Favorite = () => {
             <SwiperSlide
               key={index}
               style={{
-                width: activeIndex === index ? 658 : 451,
+                width: isMobile ? (activeIndex === index ? "330px" : "250px") : (activeIndex === index ? 658 : 451),
                 transition: "width 0.3s ease-in-out",
               }}
             >
               <Card
                 sx={{
                   width: "100%",
-                  height: activeIndex === index ? 418 : 366,
+                  height: isMobile ? (activeIndex === index ? "230px" : "188px") : (activeIndex === index ? '418px' : '366px'),
                   borderRadius: 3,
                   boxShadow: 3,
                   transition: "all 0.3s ease-in-out", // Smooth transition effect

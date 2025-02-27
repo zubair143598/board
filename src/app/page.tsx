@@ -10,12 +10,12 @@ import { Box, useTheme } from "@mui/material";
 export default function Home() {
   const theme = useTheme();
   return (
-    <Box>
+    <>
       <Hero />
-      <Favorite />
+      {/* <Favorite /> */}
       <Discover />
       <Welcome />
       <Testimonial />
-    </Box>
+    </>
   );
 }

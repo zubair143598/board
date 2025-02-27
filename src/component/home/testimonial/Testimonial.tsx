@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Box, Card, CardMedia, Rating, Typography } from "@mui/material";
+import { Box, Card, CardMedia, Rating, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 
 const Testimonial = () => {
@@ -44,8 +44,10 @@ const Testimonial = () => {
     },
   ];
 
+const isMobile = useMediaQuery("(max-width: 900px)");
+
   return (
-    <Box sx={{ marginBottom: "100px" }}>
+    <Box sx={{ marginBottom: "100px", margin:'0 20px' }}>
       <Box
         sx={{
           width: "100%",
@@ -58,12 +60,12 @@ const Testimonial = () => {
         <Swiper
           modules={[Autoplay, Pagination]}
           spaceBetween={30}
-          slidesPerView={2}
+          slidesPerView={isMobile ? 1 :2}
           loop={true}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           pagination={{ clickable: true, el: ".custom-pagination" }}
           grabCursor={true}
-          style={{ width: "100%", paddingBottom: "100px" }} // Extra space for positioning pagination
+          style={{ width: "100%", paddingBottom: "100px", }} // Extra space for positioning pagination
         >
           {data.map((item, index) => (
             <SwiperSlide
@@ -75,7 +77,7 @@ const Testimonial = () => {
                   width: "607px",
                   //   height: "388px",
                   boxShadow: 3,
-                  padding: "58px 47px",
+                  padding: {xs:'40px 20px',sm:"58px 47px"},
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",

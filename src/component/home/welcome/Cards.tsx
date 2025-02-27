@@ -65,10 +65,10 @@ const Cards = () => {
     <Box sx={{ maxWidth: "1270px", margin: "0 auto", padding: "20px" }}>
       <Grid container spacing={3}>
         {cardData.map((data, index) => (
-          <Grid item key={index} xs={12} md={6} lg={4}>
+          <Grid item key={index} xs={12} md={6} lg={4} sx={{ display:'flex', justifyContent:'center'}}>
             <Card
               sx={{
-                width: "397px",
+                width: {xs:'330px',sm:"397px"},
                 background: "transparent",
                 border: "1px solid #FFFFFF33",
                 backdropFilter: "blur(12px)",
@@ -78,8 +78,8 @@ const Cards = () => {
             >
               <CardMedia
                 sx={{
-                  height: "265px",
-                  width: "361px",
+                  height: {xs:"220px",sm:"265px"},
+                  width: {xs:"300px",sm:"361px"},
                   margin: "20px 18px 30px",
                 }}
                 image={data.image}

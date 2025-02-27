@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ButtonContainer,
-  BuyButton,
   ExploreSpan,
   HeadingContainer,
   HeroContainer,
@@ -9,21 +8,22 @@ import {
   HeroParagraph,
   MarqueeContainer,
   ParagraphContainer,
-  PlayButton,
   ProjectsDetailContainer,
   RightContainer,
 } from "./Hero.style";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import MarqueeSwiper from "@/component/common/MarqueeSwiper";
-import Image from "next/image";
+import { ActiveButton, NonActiveButton } from "@/component/mui/Buttons";
 
 const Hero = () => {
+  const [activeBuyButton, setActiveBuyButton] = useState("Buy Now");
+  const isMobile = useMediaQuery("(max-width: 900px)");
   return (
     <HeroContainer>
-      <div className=" "></div>
       <HeadingContainer>
-        <HeroHeading>
-          Let your mind <ExploreSpan> explore </ExploreSpan> new world
+        <HeroHeading variant="h1">
+          Let your <br />
+          mind<ExploreSpan> explore </ExploreSpan> new world
         </HeroHeading>
       </HeadingContainer>
       <ParagraphContainer>
@@ -34,15 +34,31 @@ const Hero = () => {
         </HeroParagraph>
       </ParagraphContainer>
       <ButtonContainer>
-        <BuyButton>Buy Now</BuyButton>
-        <PlayButton>Play Now</PlayButton>
+        {["Buy Now", "Play Now"].map((label) => {
+          const isActive = activeBuyButton === label;
+          const ButtonComponent = isActive ? ActiveButton : NonActiveButton;
+
+          return (
+            <ButtonComponent
+              key={label}
+              onClick={() => setActiveBuyButton(label)}
+              sx={{ height: "74px", width: "232px" }}
+            >
+              {label}
+            </ButtonComponent>
+          );
+        })}
       </ButtonContainer>
       <ProjectsDetailContainer>
         <Box>
-          <Typography sx={{ fontWeight: 800, fontSize: "30px" }}>
+          <Typography
+            sx={{ fontWeight: 800, fontSize: { xs: "22px", sm: "30px" } }}
+          >
             300+
           </Typography>
-          <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
+          <Typography
+            sx={{ fontWeight: 400, fontSize: { xs: "14px", sm: "19px" } }}
+          >
             Unique style
           </Typography>
         </Box>
@@ -50,7 +66,7 @@ const Hero = () => {
           <Typography
             sx={{
               fontWeight: 800,
-              fontSize: "30px",
+              fontSize: { xs: "22px", sm: "30px" },
               background:
                 "linear-gradient(135deg, #5d31d4 0%, #ff00ff 50%, #ff0080 100%)",
               WebkitBackgroundClip: "text",
@@ -61,7 +77,9 @@ const Hero = () => {
           >
             200+
           </Typography>
-          <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
+          <Typography
+            sx={{ fontWeight: 400, fontSize: { xs: "14px", sm: "19px" } }}
+          >
             Project finished
           </Typography>
         </Box>
@@ -69,23 +87,23 @@ const Hero = () => {
           <Typography
             sx={{
               fontWeight: 800,
-              fontSize: "30px",
+              fontSize: { xs: "22px", sm: "30px" },
             }}
           >
             500+
           </Typography>
-          <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
+          <Typography
+            sx={{ fontWeight: 400, fontSize: { xs: "14px", sm: "19px" } }}
+          >
             Happy customer
           </Typography>
         </Box>
       </ProjectsDetailContainer>
       <RightContainer>
-        <Image
-          src="/herobg.png"
+        <img
+          src={isMobile ? "/herobg2.png" : "/herobg.png"}
           alt=""
-          layout="responsive"
-          width={100}
-          height={960}
+          style={{ height: "100%", width: "100%" }}
         />
       </RightContainer>
       <MarqueeContainer>

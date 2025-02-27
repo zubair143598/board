@@ -6,7 +6,10 @@ export const FavContainer = styled(Box)(({ theme }) => ({
     margin: "100px auto",
     color:'white',
     position:'relative',
-    textAlign:'center'
+    textAlign:'center',
+    [theme.breakpoints.down("md")]:{
+      margin: "50px auto",
+    }
   }));
 
   export const HeadingContainer = styled(Box)(({ theme }) => ({
@@ -14,12 +17,16 @@ export const FavContainer = styled(Box)(({ theme }) => ({
     margin:'0 auto'
   }));
 
-  export const FavHeading = styled(Typography)(()=>({
+  export const FavHeading = styled(Typography)(({theme})=>({
     fontSize: "66px",
     fontWeight: 800,
     textTransform: "uppercase",
     margin:'0px',
-    lineHeight:'77px'
+    lineHeight:'77px',
+    [theme.breakpoints.down("md")]:{
+      fontSize: "35px",
+      lineHeight:'38px',
+    }
   }))
 
   export const FavSpan = styled("span")(({ theme }) => ({
@@ -37,9 +44,13 @@ export const FavContainer = styled(Box)(({ theme }) => ({
     fontSize: "17px",
   }));
 
-  export const ButtonsContainer = styled(Box)(()=>({
+  export const ButtonsContainer = styled(Box)(({theme})=>({
     margin:'70px auto 110px',
     maxWidth:'470px',
     display:'flex',
-    gap:'20px'
+    justifyContent:'center',
+    gap:'20px',
+    [theme.breakpoints.down("md")]:{
+      margin:'24px auto 70px',
+    }
   }))

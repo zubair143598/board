@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ButtonsContainer,
   Heading,
@@ -11,6 +11,7 @@ import Cards from "./Cards";
 import MarqueeSwiper from "@/component/common/MarqueeSwiper";
 
 const Welcome = () => {
+  const [activeButton, setActiveButton] = useState("Mewest games");
   return (
     <WelcomeContainer>
       <HeadingContainer>
@@ -20,14 +21,30 @@ const Welcome = () => {
         </Heading>
       </HeadingContainer>
       <ButtonsContainer>
-        <ActiveButton sx={{hight:'64px', width:'241px', fontSize:'18px'}}>Mewest games</ActiveButton>
-        <NonActiveButton sx={{hight:'64px', width:'221px',fontSize:'18px'}}>latest games</NonActiveButton>
-        <NonActiveButton sx={{hight:'64px', width:'221px',fontSize:'18px'}}>Fight games</NonActiveButton>
-        <NonActiveButton sx={{hight:'64px', width:'211px',fontSize:'18px'}}>sport games</NonActiveButton>
+        {["Mewest games", "Latest games", "Fight games", "Sport games"].map(
+          (game) => {
+            const isActive = activeButton === game;
+            const ButtonComponent = isActive ? ActiveButton : NonActiveButton;
+
+            return (
+              <ButtonComponent
+                key={game}
+                onClick={() => setActiveButton(game)}
+                sx={{
+                  height: { xs: "42px", md: "64px" },
+                  width: { xs: "160px", md: "241px" },
+                  fontSize: { xs: "12px", md: "18px" },
+                }}
+              >
+                {game}
+              </ButtonComponent>
+            );
+          }
+        )}
       </ButtonsContainer>
-      <Cards/>
+      <Cards />
       <MarqueeContainer>
-        <MarqueeSwiper/>
+        <MarqueeSwiper />
       </MarqueeContainer>
     </WelcomeContainer>
   );

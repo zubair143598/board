@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -19,6 +19,21 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Detect scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDrawer = (state: boolean) => () => {
     setOpen(state);
@@ -31,18 +46,20 @@ const Navbar = () => {
       <AppBar
         position="sticky"
         sx={{
-          backgroundColor: "transparent",
+          backgroundColor: scrolled ? "rgba(61, 45, 116, 0.4)" : "transparent", 
+          backdropFilter: scrolled ? "blur(10px)" : "none", 
+          transition: "background-color 0.3s ease, backdrop-filter 0.3s ease",
           maxWidth: "1240px",
           margin: "0 auto",
           color: "white",
           boxShadow: "none",
-          marginTop:{xs:'-15px', sm:'0'},
-          paddingTop:{xs:'20px', sm:'0'}
+          marginTop: { xs: "-15px", sm: "0" },
+          paddingTop: { xs: "20px", sm: "0" },
         }}
       >
         <Toolbar>
           {/* Left Side: Logo */}
-          <Box  sx={{ flexGrow: { xs: 1, md: 0 } }}>
+          <Box sx={{ flexGrow: { xs: 1, md: 0 } }}>
             <Image src="/logo.png" alt="logo" height={35} width={150} />
           </Box>
 
@@ -92,7 +109,7 @@ const Navbar = () => {
             {navLinks.map((link) => (
               <ListItem key={link} disablePadding>
                 <ListItemButton onClick={toggleDrawer(false)}>
-                  <ListItemText primary={link} />
+                  <ListItemText sx={{ color: "white" }} primary={link} />
                 </ListItemButton>
               </ListItem>
             ))}
