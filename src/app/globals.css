@@ -12,5 +12,9 @@ body {
 }
 
 .css-y7ab46-MuiPaper-root-MuiDrawer-paper {
-  background:  #2D1E6B;
+  background:  #2D1E6B !important;
+}
+
+.css-y50yd7{
+  background:  #2D1E6B !important;
 }
