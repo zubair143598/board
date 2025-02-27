@@ -1,28 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ButtonContainer,
-  BuyButton,
   ExploreSpan,
   HeadingContainer,
   HeroContainer,
   HeroHeading,
   HeroParagraph,
+  MarqueeContainer,
   ParagraphContainer,
-  PlayButton,
-  ProjectDetail,
   ProjectsDetailContainer,
+  RightContainer,
 } from "./Hero.style";
-import { Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import MarqueeSwiper from "@/component/common/MarqueeSwiper";
+import { ActiveButton, NonActiveButton } from "@/component/mui/Buttons";
 
 const Hero = () => {
+  const [activeBuyButton, setActiveBuyButton] = useState("Buy Now");
+  const isMobile = useMediaQuery("(max-width: 900px)");
   return (
     <HeroContainer>
-        <div className="absolute inset-0 bg-blue-500 opacity-50"></div>
       <HeadingContainer>
-
-        <HeroHeading>
-          Let your mind <ExploreSpan> explore </ExploreSpan> new world
+        <HeroHeading variant="h1">
+          Let your <br />
+          mind<ExploreSpan> explore </ExploreSpan> new world
         </HeroHeading>
       </HeadingContainer>
       <ParagraphContainer>
@@ -33,46 +34,81 @@ const Hero = () => {
         </HeroParagraph>
       </ParagraphContainer>
       <ButtonContainer>
-        <BuyButton>Buy Now</BuyButton>
-        <PlayButton>Play Now</PlayButton>
+        {["Buy Now", "Play Now"].map((label) => {
+          const isActive = activeBuyButton === label;
+          const ButtonComponent = isActive ? ActiveButton : NonActiveButton;
+
+          return (
+            <ButtonComponent
+              key={label}
+              onClick={() => setActiveBuyButton(label)}
+              sx={{ height: "74px", width: "232px" }}
+            >
+              {label}
+            </ButtonComponent>
+          );
+        })}
       </ButtonContainer>
       <ProjectsDetailContainer>
-        <ProjectDetail>
-          <Typography sx={{ fontWeight: 800, fontSize: "30px" }}>
+        <Box>
+          <Typography
+            sx={{ fontWeight: 800, fontSize: { xs: "22px", sm: "30px" } }}
+          >
             300+
           </Typography>
-          <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
+          <Typography
+            sx={{ fontWeight: 400, fontSize: { xs: "14px", sm: "19px" } }}
+          >
             Unique style
           </Typography>
-        </ProjectDetail>
-        <ProjectDetail>
-          <Typography sx={{ fontWeight: 800, fontSize: "30px" , background:
+        </Box>
+        <Box>
+          <Typography
+            sx={{
+              fontWeight: 800,
+              fontSize: { xs: "22px", sm: "30px" },
+              background:
                 "linear-gradient(135deg, #5d31d4 0%, #ff00ff 50%, #ff0080 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              color: "transparent",}}>
+              color: "transparent",
+            }}
+          >
             200+
           </Typography>
-          <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
+          <Typography
+            sx={{ fontWeight: 400, fontSize: { xs: "14px", sm: "19px" } }}
+          >
             Project finished
           </Typography>
-        </ProjectDetail>
-        <ProjectDetail>
+        </Box>
+        <Box>
           <Typography
             sx={{
               fontWeight: 800,
-              fontSize: "30px",
+              fontSize: { xs: "22px", sm: "30px" },
             }}
           >
             500+
           </Typography>
-          <Typography sx={{ fontWeight: 400, fontSize: "19px" }}>
+          <Typography
+            sx={{ fontWeight: 400, fontSize: { xs: "14px", sm: "19px" } }}
+          >
             Happy customer
           </Typography>
-        </ProjectDetail>
+        </Box>
       </ProjectsDetailContainer>
-      <MarqueeSwiper  speed={20_000} />
+      <RightContainer>
+        <img
+          src={isMobile ? "/herobg2.png" : "/herobg.png"}
+          alt=""
+          style={{ height: "100%", width: "100%" }}
+        />
+      </RightContainer>
+      <MarqueeContainer>
+        <MarqueeSwiper speed={20_000} />
+      </MarqueeContainer>
     </HeroContainer>
   );
 };

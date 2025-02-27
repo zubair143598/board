@@ -11,24 +11,7 @@ import Image from "next/image";
 const MarqueeSwiper = ({ speed = 30000 }) => {
 
   return (
-    <div
-      style={{
-        maxWidth: "1440px",
-
-        position: "absolute",
-        backgroundColor: "rgba(61, 45, 116, 0.4)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(10px)",
-        color: "white",
-        width: "100%",
-        whiteSpace: "nowrap",
-        textAlign: "center",
-        zIndex: 10,
-        bottom: "16px",
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
+   
       <Swiper
         modules={[Autoplay]}
         slidesPerView="auto"
@@ -57,7 +40,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
             sx={{
               whiteSpace: "nowrap",
               fontSize: {
-                xs: "20px",
+                xs: "17px",
                 sm: "30px",
               },
               display: "flex",
@@ -70,7 +53,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 whiteSpace: "nowrap",
                 fontWeight: 800,
                 fontSize: {
-                  xs: "20px",
+                  xs: "17px",
                   sm: "30px",
                 },
                 display: "flex",
@@ -78,7 +61,10 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 gap: "10px",
               }}
             >
-              <Image src="/star.png" alt="star" width={36} height={36} />
+              <Box sx={{width: {xs:'20px', sm:'36px'},height:{xs:'20px', sm:'36px'}}}>
+
+              <Image src="/star.png" alt="star" width={3} height={3} layout="responsive" />
+              </Box>
               MIND - BENDING
             </Box>
 
@@ -87,7 +73,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 whiteSpace: "nowrap",
                 fontWeight: 800,
                 fontSize: {
-                  xs: "20px",
+                  xs: "17px",
                   sm: "30px",
                 },
                 display: "flex",
@@ -95,7 +81,10 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 gap: "10px",
               }}
             >
-              <Image src="/star.png" alt="star" width={36} height={36} />
+              <Box sx={{width: {xs:'20px', sm:'36px'},height:{xs:'20px', sm:'36px'}}}>
+
+<Image src="/star.png" alt="star" width={3} height={3} layout="responsive" />
+</Box>
               ACTION - PACKED
             </Box>
 
@@ -104,7 +93,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 whiteSpace: "nowrap",
                 fontWeight: 800,
                 fontSize: {
-                  xs: "20px",
+                  xs: "17px",
                   sm: "30px",
                 },
                 display: "flex",
@@ -112,7 +101,10 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 gap: "10px",
               }}
             >
-              <Image src="/star.png" alt="star" width={36} height={36} />
+               <Box sx={{width: {xs:'20px', sm:'36px'},height:{xs:'20px', sm:'36px'}}}>
+
+<Image src="/star.png" alt="star" width={3} height={3} layout="responsive" />
+</Box>
               GAMING SPANING
             </Box>
           </Box>
@@ -141,7 +133,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
             sx={{
               whiteSpace: "nowrap",
               fontSize: {
-                xs: "20px",
+                xs: "17px",
                 sm: "30px",
               },
               display: "flex",
@@ -154,7 +146,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 whiteSpace: "nowrap",
                 fontWeight: 800,
                 fontSize: {
-                  xs: "20px",
+                  xs: "17px",
                   sm: "30px",
                 },
                 display: "flex",
@@ -162,7 +154,10 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 gap: "10px",
               }}
             >
-              <Image src="/star.png" alt="star" width={36} height={36} />
+               <Box sx={{width: {xs:'20px', sm:'36px'},height:{xs:'20px', sm:'36px'}}}>
+
+<Image src="/star.png" alt="star" width={3} height={3} layout="responsive" />
+</Box>
               MIND - BENDING
             </Box>
 
@@ -171,7 +166,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 whiteSpace: "nowrap",
                 fontWeight: 800,
                 fontSize: {
-                  xs: "20px",
+                  xs: "17px",
                   sm: "30px",
                 },
                 display: "flex",
@@ -179,7 +174,10 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 gap: "10px",
               }}
             >
-              <Image src="/star.png" alt="star" width={36} height={36} />
+               <Box sx={{width: {xs:'20px', sm:'36px'},height:{xs:'20px', sm:'36px'}}}>
+
+<Image src="/star.png" alt="star" width={3} height={3} layout="responsive" />
+</Box>
               ACTION - PACKED
             </Box>
 
@@ -188,7 +186,7 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 whiteSpace: "nowrap",
                 fontWeight: 800,
                 fontSize: {
-                  xs: "20px",
+                  xs: "17px",
                   sm: "30px",
                 },
                 display: "flex",
@@ -196,7 +194,10 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
                 gap: "10px",
               }}
             >
-              <Image src="/star.png" alt="star" width={36} height={36} />
+               <Box sx={{width: {xs:'20px', sm:'36px'},height:{xs:'20px', sm:'36px'}}}>
+
+<Image src="/star.png" alt="star" width={3} height={3} layout="responsive" />
+</Box>
               GAMING SPANING
             </Box>
           </Box>
@@ -212,7 +213,6 @@ const MarqueeSwiper = ({ speed = 30000 }) => {
           ></Box>
         </SwiperSlide>
       </Swiper>
-    </div>
   );
 };
 
