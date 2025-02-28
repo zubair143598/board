@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Favorite /> */}
+      <Favorite />
       <Discover />
       <Welcome />
       <Testimonial />

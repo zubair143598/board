@@ -26,7 +26,7 @@ export const HeadingContainer = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
     maxWidth: "334px",
-    marginLeft: "0px",
+    marginLeft: "10px",
     display: "flex",
     justifyContent: "center",
   },
@@ -38,7 +38,7 @@ export const HeroHeading = styled(Typography)(({ theme }) => ({
   textTransform: "uppercase",
   margin: "0px",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "40px",
+    fontSize: "30px",
   },
 }));
 
@@ -54,7 +54,7 @@ export const ParagraphContainer = styled(Box)(({ theme }) => ({
   marginTop: "14px",
   
   [theme.breakpoints.down("sm")]: {
-    marginLeft: "0px",
+    marginLeft: "10px",
     maxWidth: "329px",
     height:'550px'
   },
@@ -75,12 +75,16 @@ export const ButtonContainer = styled(Box)(({ theme }) => ({
   marginLeft: "103px",
   marginTop: "30px",
   gap: "20px",
+  justifyContent:'start',
   flexDirection: "row",
   [theme.breakpoints.down("md")]: {
     marginLeft: "26px",
   },
   [theme.breakpoints.down("sm")]: {
-    marginLeft: "10px",
+    marginLeft: "0px",
+    flexWrap:'wrap',
+  gap: "10px",
+  justifyContent:'center',
   },
 }));
 
@@ -112,7 +116,7 @@ export const MarqueeContainer = styled(Box)(({theme}) => ({
   bottom: "-12px",
   display: "flex",
   justifyContent: "center",
-  padding: "20px 0",
+  padding: "10px 0",
   transform: "rotate(-1deg)",
   transformOrigin: "center",
   [theme.breakpoints.down("sm")]: {

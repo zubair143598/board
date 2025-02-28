@@ -47,7 +47,7 @@ const Testimonial = () => {
 const isMobile = useMediaQuery("(max-width: 900px)");
 
   return (
-    <Box sx={{ marginBottom: "100px", margin:'0 20px' }}>
+    <Box sx={{ marginBottom: "100px", margin:{xs:'10px',sm:'0 20px'} }}>
       <Box
         sx={{
           width: "100%",
@@ -58,7 +58,7 @@ const isMobile = useMediaQuery("(max-width: 900px)");
         }}
       >
         <Swiper
-          modules={[Autoplay, Pagination]}
+          // modules={[Autoplay, Pagination]}
           spaceBetween={30}
           slidesPerView={isMobile ? 1 :2}
           loop={true}
@@ -75,9 +75,8 @@ const isMobile = useMediaQuery("(max-width: 900px)");
               <Card
                 sx={{
                   width: "607px",
-                  //   height: "388px",
                   boxShadow: 3,
-                  padding: {xs:'40px 20px',sm:"58px 47px"},
+                  padding: {xs:'40px 10px',sm:"58px 47px"},
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
@@ -115,7 +114,7 @@ const isMobile = useMediaQuery("(max-width: 900px)");
                       display: "flex",
                       color: "white",
                       margin: "18px 0",
-                      gap:'20px',
+                      gap:{xs:'10px',sm:'20px'},
                     }}
                   >
                     <CardMedia
@@ -128,7 +127,7 @@ const isMobile = useMediaQuery("(max-width: 900px)");
                       title={item.username}
                     />
                     <Box>
-                      <Typography sx={{ fontWeight: 500, fontSize: "18px" }}>
+                      <Typography sx={{ fontWeight: 500, fontSize: {xs:'14px',sm:'18px'} }}>
                         {item.username}
                       </Typography>
                       <Typography sx={{ fontWeight: 500, fontSize: "10px" }}>
