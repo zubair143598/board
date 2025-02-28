@@ -96,7 +96,7 @@ const Footer = () => {
             </List>
           </LinksContainer>
         </Box>
-        <LinksContainer sx={{ width: "167px" }}>
+        <LinksContainer sx={{ maxWidth: "167px" }}>
           <Typography sx={{ fontWeight: 800, fontSize: "18px" }}>
             resources
           </Typography>

@@ -7,6 +7,9 @@ export const DiscoverContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   marginBottom: "84px",
   padding: "0 40px",
+  [theme.breakpoints.down("sm")]: {
+    padding: "0 0px",
+  }
 }));
 
 export const DiscoverInnerCon = styled(Box)(({ theme }) => ({
@@ -27,7 +30,8 @@ export const DiscoverInnerCon = styled(Box)(({ theme }) => ({
     justifyContent: "center",
   },
   [theme.breakpoints.down("sm")]: {
-    width:'330px'
+    // width:'330px'
+    width: "90%",
   }
 }));
 
@@ -44,11 +48,11 @@ export const LeftContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     width: "362px",
     height: "50%",
-    left:'25%'
+    left:'20%'
   },
   [theme.breakpoints.down("sm")]: {
-    width: "342px",
-    height: "389px",
+    width: "322px",
+    height: "359px",
      left:'0'
   },
 }));

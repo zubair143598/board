@@ -62,7 +62,7 @@ const cardData = [
 
 const Cards = () => {
   return (
-    <Box sx={{ maxWidth: "1270px", margin: "0 auto", padding: "20px" }}>
+    <Box sx={{ maxWidth: "1270px", margin: "0 auto", padding: {xs:'4px',sm:"20px"} }}>
       <Grid container spacing={3}>
         {cardData.map((data, index) => (
           <Grid item key={index} xs={12} md={6} lg={4} sx={{ display:'flex', justifyContent:'center'}}>

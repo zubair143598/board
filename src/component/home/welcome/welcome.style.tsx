@@ -9,15 +9,15 @@ export const WelcomeContainer = styled(Box)(() => ({
 
 export const HeadingContainer = styled(Box)(() => ({
   maxWidth: "718px",
-  margin:'0 auto',
-  textAlign:'center'
+  margin: "0 auto",
+  textAlign: "center",
 }));
 
-export const Heading = styled(Typography)(({theme}) => ({
+export const Heading = styled(Typography)(({ theme }) => ({
   fontSize: "66px",
   fontWeight: 800,
   lineHeight: "77px",
-  margin:'0 auto',
+  margin: "0 auto",
   textTransform: "uppercase",
   "& span": {
     background: "linear-gradient(135deg, #6a11cb 0%, #ff00ff 100%)",
@@ -32,12 +32,12 @@ export const Heading = styled(Typography)(({theme}) => ({
   [theme.breakpoints.down("sm")]: {
     fontSize: "34px",
     maxWidth: "296px",
-    padding:'0 22px',
+    padding: "0 22px",
     lineHeight: "38px",
   },
 }));
 
-export const ButtonsContainer = styled(Box)(({theme}) => ({
+export const ButtonsContainer = styled(Box)(({ theme }) => ({
   margin: "40px auto 77px",
   display: "grid",
   gap: "20px",
@@ -47,10 +47,11 @@ export const ButtonsContainer = styled(Box)(({theme}) => ({
   [theme.breakpoints.down(1080)]: {
     placeItems: "center",
     gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "5px",
     maxWidth: "300px",
   },
-}))
+}));
 
-export const MarqueeContainer = styled(Box)(()=>({
-  margin:'86px 0',
-}))
+export const MarqueeContainer = styled(Box)(() => ({
+  margin: "86px 0",
+}));

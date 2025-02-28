@@ -112,7 +112,7 @@ export const MarqueeContainer = styled(Box)(({theme}) => ({
   bottom: "-12px",
   display: "flex",
   justifyContent: "center",
-  padding: "20px 0",
+  padding: "10px 0",
   transform: "rotate(-1deg)",
   transformOrigin: "center",
   [theme.breakpoints.down("sm")]: {
