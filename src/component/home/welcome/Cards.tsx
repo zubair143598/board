@@ -62,13 +62,13 @@ const cardData = [
 
 const Cards = () => {
   return (
-    <Box sx={{ maxWidth: "1270px", margin: "0 auto", padding: {xs:'4px',sm:"20px"} }}>
+    <Box sx={{ maxWidth: "1270px", margin: "0 auto", padding: {xs:'16px',sm:"20px"} }}>
       <Grid container spacing={3}>
         {cardData.map((data, index) => (
           <Grid item key={index} xs={12} md={6} lg={4} sx={{ display:'flex', justifyContent:'center'}}>
             <Card
               sx={{
-                width: {xs:'330px',sm:"397px"},
+                width: {xs:'100%',sm:"397px"},
                 background: "transparent",
                 border: "1px solid #FFFFFF33",
                 backdropFilter: "blur(12px)",
@@ -76,20 +76,23 @@ const Cards = () => {
                 backgroundColor: "#552b80",
               }}
             >
+              <Box sx={{display:'flex', justifyContent:'center'}}>
+
               <CardMedia
                 sx={{
                   height: {xs:"220px",sm:"265px"},
-                  width: {xs:"300px",sm:"361px"},
-                  margin: "20px 18px 30px",
+                  width: {xs:"90%",sm:"361px"},
+                  marginTop: "20px",
                 }}
                 image={data.image}
                 title={data.alt || "Card Image"}
-              />
+                />
+                </Box>
               <CardContent>
-                <Typography sx={{ color: "white", fontWeight: 500, fontSize: "24px" }}>
+                <Typography sx={{ color: "white", fontWeight: 500, fontSize: {xs:'18px',sm:"24px"} }}>
                   {data.title}
                 </Typography>
-                <Box sx={{ display: "flex", gap: "20px", color: "white", margin: "18px 0" }}>
+                <Box sx={{ display: "flex", gap: {xs:'10px',sm:"20px"}, color: "white", margin: "18px 0" }}>
                   <Box>
                     <CardMedia
                       sx={{ height: "53px", width: "53px", borderRadius: "50%" }}
@@ -98,7 +101,7 @@ const Cards = () => {
                     />
                   </Box>
                   <Box>
-                    <Typography sx={{ fontWeight: 500, fontSize: "18px" }}>{data.username}</Typography>
+                    <Typography sx={{ fontWeight: 500, fontSize: {xs:'14px',sm:"18px"} }}>{data.username}</Typography>
                     <Typography sx={{ fontWeight: 500, fontSize: "10px" }}>{data.character}</Typography>
                   </Box>
                 </Box>

@@ -30,9 +30,9 @@ export const Heading = styled(Typography)(({ theme }) => ({
     maxWidth: "431px",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "34px",
+    fontSize: "30px",
     maxWidth: "296px",
-    padding: "0 22px",
+    padding: "0 10px",
     lineHeight: "38px",
   },
 }));
@@ -47,7 +47,7 @@ export const ButtonsContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down(1080)]: {
     placeItems: "center",
     gridTemplateColumns: "repeat(2, 1fr)",
-    gap: "5px",
+    gap: "10px",
     maxWidth: "300px",
   },
 }));

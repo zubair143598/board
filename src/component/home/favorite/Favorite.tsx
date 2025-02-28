@@ -43,7 +43,7 @@ const Favorite = () => {
       </ParagraphContainer>
       <Box sx={{ width: "100%", height:{xs:'260px',sm:'450px'}, maxWidth: 1400, mx: "auto", }}>
         <Swiper
-          modules={[Autoplay]}
+          // modules={[Autoplay]}
           spaceBetween={50} 
           centeredSlides={true}
           slidesPerView={"auto"}
@@ -52,13 +52,15 @@ const Favorite = () => {
           speed={3000} 
           grabCursor={true}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          style={{ paddingLeft: "50px", paddingRight: "50px" }}
+          style={{ paddingLeft: isMobile ? "10px" : "50px", paddingRight: isMobile ? "10px" : "50px" }}
+          
         >
           {images.map((src, index) => (
+            
             <SwiperSlide
               key={index}
               style={{
-                width: isMobile ? (activeIndex === index ? "330px" : "250px") : (activeIndex === index ? 658 : 451),
+                width: isMobile ? (activeIndex === index ? "95%" : "70%") : (activeIndex === index ? 658 : 451),
                 transition: "width 0.3s ease-in-out",
               }}
             >
@@ -88,8 +90,8 @@ const Favorite = () => {
         </Swiper>
       </Box>
       <ButtonsContainer>
-        <ActiveButton>View All</ActiveButton>
-        <NonActiveButton>Play Now</NonActiveButton>
+        <ActiveButton sx={{width:{xs:'120px',sm:"232px"}}}>View All</ActiveButton>
+        <NonActiveButton sx={{width:{xs:'120px',sm:"232px"}}}>Play Now</NonActiveButton>
       </ButtonsContainer>
     </FavContainer>
   );

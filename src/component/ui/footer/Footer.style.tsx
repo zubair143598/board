@@ -44,7 +44,7 @@ export const FooterInnerCon = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     gridTemplateColumns:"repeat(1,1fr)",
     padding: "100px 20px 0px 24px",
-    gap: "40px",
+    gap: "20px",
   },
 }));
 
@@ -73,6 +73,7 @@ export const BrandsContainer = styled(Box)(({ theme }) => ({
     padding: "20px 20px 0px 20px",
     flexDirection: "column",
     gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "20px",
   },
 }));
 

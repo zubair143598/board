@@ -30,9 +30,8 @@ const Welcome = () => {
               <ButtonComponent
                 key={game}
                 onClick={() => setActiveButton(game)}
-                sx={{
+                sx={{width: {xs:'120px',sm:"232px"},
                   height: { xs: "42px", md: "64px" },
-                  width: { xs: "160px", md: "241px" },
                   fontSize: { xs: "12px", md: "18px" },
                 }}
               >

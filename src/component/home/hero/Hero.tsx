@@ -42,7 +42,7 @@ const Hero = () => {
             <ButtonComponent
               key={label}
               onClick={() => setActiveBuyButton(label)}
-              sx={{ height: "74px", width: "232px" }}
+              sx={{ height: "74px", width: {xs:'120px',sm:"232px"} }}
             >
               {label}
             </ButtonComponent>

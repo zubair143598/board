@@ -51,7 +51,7 @@ export const LeftContainer = styled(Box)(({ theme }) => ({
     left:'20%'
   },
   [theme.breakpoints.down("sm")]: {
-    width: "322px",
+    width: "90%",
     height: "359px",
      left:'0'
   },
@@ -74,9 +74,9 @@ export const DisHeading = styled(Typography)(({ theme }) => ({
     maxWidth: "431px",
   },
   [theme.breakpoints.down("sm")]: {
-    fontSize: "28px",
+    fontSize: "26px",
     maxWidth: "296px",
-    padding:'0 22px',
+    padding:'0 10px',
     lineHeight: "31px",
   },
 }));
@@ -96,7 +96,7 @@ export const Para = styled(Typography)(({theme}) => ({
   },
   [theme.breakpoints.down("sm")]: {
     maxWidth: "296px",
-    padding:'0 22px',
+    padding:'0 10px',
     lineHeight: "31px",
   },
 }));

@@ -38,7 +38,7 @@ const Footer = () => {
             .
           </Typography>
         </LogoContainer>
-        <Box sx={{ display: "flex", gap: "80px" }}>
+        <Box sx={{ display: "flex", gap: {xs:'20px',sm:"80px"} }}>
           <LinksContainer>
             <Typography sx={{ fontWeight: 800, fontSize: "18px" }}>
               Company
@@ -67,7 +67,7 @@ const Footer = () => {
               </ListItem>
             </List>
           </LinksContainer>
-          <LinksContainer sx={{ width: "95px" }}>
+          <LinksContainer sx={{ maxWidth: "95px" }}>
             <Typography sx={{ fontWeight: 800, fontSize: "18px" }}>
               help
             </Typography>
@@ -129,19 +129,19 @@ const Footer = () => {
         <Box sx={{width:{xs:'84px', sm:'99px'}, height:{xs:'28px', sm:'32px'}}}>
           <Image src="/twitch.png" alt="twitch" height={32} width={99} layout="responsive"/>
         </Box>
-        <Box sx={{width:{xs:'140px', sm:'167px'}, height:{xs:'24px', sm:'29px'}}}>
+        <Box sx={{width:{xs:'110px', sm:'167px'}, height:{xs:'24px', sm:'29px'}}}>
           <Image src="/roblox.png" alt="roblox" height={29} width={167} layout="responsive" />
         </Box>
-        <Box sx={{width:{xs:'118px', sm:'147px'}, height:{xs:'24px', sm:'29px'}}}>
+        <Box sx={{width:{xs:'100px', sm:'147px'}, height:{xs:'24px', sm:'29px'}}}>
           <Image src="/asus.png" alt="asus" height={29} width={147} layout="responsive"/>
         </Box>
-        <Box sx={{width:{xs:'118px', sm:'147px'}, height:{xs:'25px', sm:'31px'}}}>
+        <Box sx={{width:{xs:'100px', sm:'147px'}, height:{xs:'25px', sm:'31px'}}}>
           <Image src="/canon.png" alt="canon" height={31} width={147} layout="responsive"/>
         </Box>
-        <Box sx={{width:{xs:'133px', sm:'147px'}, height:{xs:'22px', sm:'24px'}}}>
+        <Box sx={{width:{xs:'100px', sm:'147px'}, height:{xs:'22px', sm:'24px'}}}>
           <Image src="/microsoft.png" alt="microsoft" height={24} width={147} layout="responsive"/>
         </Box>
-        <Box sx={{display:{sm:"none", xs:'flex'}, gap:'10px',}}>
+        <Box sx={{display:{sm:"none", xs:'flex'}, gap:{ xs: "4px", sm: "10px" },}}>
           
           <Image src="/twitter.png" alt="logo" height={28} width={28} />
           <Image src="/facebook.png" alt="logo" height={28} width={28} />
