@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Box, Card, CardMedia, Rating, Typography, useMediaQuery } from "@mui/material";
 import Image from "next/image";
+import { RatingContainer } from "./Testimonial.style";
 
 const Testimonial = () => {
   const [value, setValue] = useState<number | null>(2);
@@ -88,15 +89,18 @@ const isMobile = useMediaQuery("(max-width: 900px)");
                   backgroundColor: " #552b80",
                 }}
               >
+                <RatingContainer>
+
                 <Rating
                   name="simple-controlled"
                   value={item.stars}
                   onChange={(event, newValue) => {
                     setValue(newValue);
                   }}
-                />
+                  />
+                  </RatingContainer>
                 <Typography
-                  sx={{ fontSize: "14px", fontWeight: 400, margin: "10px 0 30px" }}
+                  sx={{ fontSize: "14px", fontWeight: 400, margin: {xs:'0px',sm:"18px 0 30px"}, padding:{xs:'18px 23px', sm:'0px'} }}
                 >
                   {item.description}
                 </Typography>
