@@ -1,5 +1,5 @@
 "use client";
-import { Height } from "@mui/icons-material";
+import { Height, Padding } from "@mui/icons-material";
 import { Box, styled, Typography, Button } from "@mui/material";
 
 export const HeroContainer = styled(Box)(({ theme }) => ({
@@ -26,7 +26,8 @@ export const HeadingContainer = styled(Box)(({ theme }) => ({
   },
   [theme.breakpoints.down("sm")]: {
     maxWidth: "334px",
-    marginLeft: "10px",
+    marginLeft: "0px",
+    padding:'0 10px',
     display: "flex",
     justifyContent: "center",
   },
@@ -54,7 +55,8 @@ export const ParagraphContainer = styled(Box)(({ theme }) => ({
   marginTop: "14px",
   
   [theme.breakpoints.down("sm")]: {
-    marginLeft: "10px",
+    marginLeft: "0px",
+    padding:'0 10px',
     maxWidth: "329px",
     height:'550px'
   },

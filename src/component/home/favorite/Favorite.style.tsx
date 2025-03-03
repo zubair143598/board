@@ -26,6 +26,7 @@ export const FavHeading = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
     fontSize: "35px",
     lineHeight: "38px",
+    padding:'0 10px',
   },
 }));
 
