@@ -22,8 +22,7 @@ const Hero = () => {
     <HeroContainer>
       <HeadingContainer>
         <HeroHeading variant="h1">
-          Let your <br />
-          mind<ExploreSpan> explore </ExploreSpan> new world
+          Let your mind<ExploreSpan> explore </ExploreSpan> new world
         </HeroHeading>
       </HeadingContainer>
       <ParagraphContainer>
@@ -107,7 +106,7 @@ const Hero = () => {
         />
       </RightContainer>
       <MarqueeContainer>
-        <MarqueeSwiper speed={20_000} />
+        <MarqueeSwiper/>
       </MarqueeContainer>
     </HeroContainer>
   );

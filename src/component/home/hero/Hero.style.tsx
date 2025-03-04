@@ -3,7 +3,7 @@ import { Height, Padding } from "@mui/icons-material";
 import { Box, styled, Typography, Button } from "@mui/material";
 
 export const HeroContainer = styled(Box)(({ theme }) => ({
-  maxWidth: "1440px",
+  // maxWidth: "1920px",
   margin: "100px auto",
   color: "white",
   position: "relative",
@@ -105,7 +105,7 @@ export const ProjectsDetailContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const MarqueeContainer = styled(Box)(({theme}) => ({
-  maxWidth: "1440px",
+  // maxWidth: "1920px",
   position: "absolute",
   backgroundColor: "rgba(61, 45, 116, 0.4)",
   backdropFilter: "blur(12px)",
@@ -115,14 +115,14 @@ export const MarqueeContainer = styled(Box)(({theme}) => ({
   whiteSpace: "nowrap",
   textAlign: "center",
   zIndex: 10,
-  bottom: "-12px",
+  bottom: "-20px",
   display: "flex",
   justifyContent: "center",
   padding: "10px 0",
   transform: "rotate(-1deg)",
   transformOrigin: "center",
   [theme.breakpoints.down("sm")]: {
-    bottom: "16rem",
+    bottom: "14rem",
     padding: "13px 0",
   }
 }));

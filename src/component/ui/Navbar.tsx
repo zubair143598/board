@@ -49,7 +49,7 @@ const Navbar = () => {
           backgroundColor: scrolled ? "rgba(61, 45, 116, 0.4)" : "transparent", 
           backdropFilter: scrolled ? "blur(10px)" : "none", 
           transition: "background-color 0.3s ease, backdrop-filter 0.3s ease",
-          maxWidth: "1240px",
+          // maxWidth: "1920px",
           margin: "0 auto",
           color: "white",
           boxShadow: "none",
@@ -57,7 +57,7 @@ const Navbar = () => {
           paddingTop: { xs: "20px", sm: "0" },
         }}
       >
-        <Toolbar>
+        <Toolbar sx={{maxWidth: "1240px", margin:'0 auto', width:'86%'}}>
           {/* Left Side: Logo */}
           <Box sx={{ flexGrow: { xs: 1, md: 0 } }}>
             <Image src="/logo.png" alt="logo" height={35} width={150} />
