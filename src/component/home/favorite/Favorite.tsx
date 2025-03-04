@@ -43,7 +43,7 @@ const Favorite = () => {
       </ParagraphContainer>
       <Box sx={{ width: "100%", height:{xs:'260px',sm:'450px'}, maxWidth: 1400, mx: "auto", }}>
         <Swiper
-          // modules={[Autoplay]}
+          modules={[Autoplay]}
           spaceBetween={50} 
           centeredSlides={true}
           slidesPerView={"auto"}

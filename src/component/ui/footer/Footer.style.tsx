@@ -3,7 +3,6 @@
 import { Box, styled } from "@mui/material";
 
 export const FooterContainer = styled(Box)(() => ({
-  maxWidth: "1440px",
   margin: "80px auto 0",
   position: "relative",
   backgroundImage: 'url("/footerbg.png")',
@@ -13,7 +12,6 @@ export const FooterContainer = styled(Box)(() => ({
 }));
 
 export const MarqueeContainer = styled(Box)(() => ({
-  maxWidth: "1440px",
   position: "absolute",
   backgroundColor: "rgba(61, 45, 116, 0.4)",
   backdropFilter: "blur(12px)",

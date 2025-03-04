@@ -22,6 +22,7 @@ const Welcome = () => {
   const [activeButton, setActiveButton] = useState("Newest games");
 
   return (
+    <>
     <WelcomeContainer>
       <HeadingContainer>
         <Heading>
@@ -100,10 +101,11 @@ const Welcome = () => {
           ))}
         </Grid>
       </Box>
+    </WelcomeContainer>
       <MarqueeContainer>
         <MarqueeSwiper />
       </MarqueeContainer>
-    </WelcomeContainer>
+      </>
   );
 };
 
