@@ -102,5 +102,7 @@ export const Para = styled(Typography)(({theme}) => ({
 }));
 
 export const MarqueeContainer = styled(Box)(() => ({
-  margin: "86px 0",
+  margin: "86px auto",
+  display:'flex',
+  justifyContent:'center'
 }));

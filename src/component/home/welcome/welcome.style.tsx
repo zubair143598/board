@@ -54,4 +54,6 @@ export const ButtonsContainer = styled(Box)(({ theme }) => ({
 
 export const MarqueeContainer = styled(Box)(() => ({
   margin: "86px 0",
+   display:'flex',
+  justifyContent:'center'
 }));
